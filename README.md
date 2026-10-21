@@ -31,6 +31,6 @@
 
 ## Происхождение
 
-Работа опирается на проекты [nfsu1-sw](https://github.com/antoxa2584x/nfsu1-sw), [nfsu1-android](https://github.com/cherepavel/nfsu1-android) и [xboxrecomp](https://github.com/sp00nznet/xboxrecomp), а также используемые графические и Android-библиотеки. Точные версии и соответствующие исходники должны сопровождать бинарный релиз; общая ссылка на upstream не заменяет их.
+Работа опирается на проекты [nfsu1-sw](https://github.com/antoxa2584x/nfsu1-sw), [nfsu1-android](https://github.com/cherepavel/nfsu1-android) и [xboxrecomp](https://github.com/sp00nznet/xboxrecomp), а также используемые графические и Android-библиотеки. [Состав, известные ревизии и границы исходного набора](docs/COMPONENTS.md), [уведомления о сторонних компонентах](licenses/README.md).
 
 Need for Speed и Underground — обозначения их правообладателей. Это неофициальный проект.

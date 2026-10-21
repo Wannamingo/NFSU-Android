@@ -12,6 +12,8 @@ These files retain the original component terms and notices. They do not assign 
 | glslang | Local source tree; exact source-to-archive build pin still being checked | `glslang-LICENSE.txt` |
 | SPIRV-Cross | Local source tree; exact source-to-archive build pin still being checked | `SPIRV-Cross-LICENSE.txt` |
 | SDL3 | Android AAR description: 3.4.16 / `fa2c02bb6e21974a89ea9824bc53c9932abe5f9c` | `SDL3-LICENSE.txt` |
+| LLVM C++ runtime | Notice from the Android NDK used for the linked static C++ runtime | `LLVM-RUNTIME-NOTICE.txt` |
+| xxHash | Original copyright and BSD-2-Clause terms from the included header | `xxHash-LICENSE.txt` |
 | ANGLE | Binary extracted from RG477M firmware; GLES library subsequently string-patched | `ANGLE-reference-LICENSE.txt` is a reference upstream license, not proof that all notices for the firmware binary are present |
 
-This is the release-preparation set, not a declaration that all redistribution or corresponding-source work is complete. The first public binary release must include the remaining applicable notices and exact source/build information where required. Presence of a component license in the source tree does not by itself establish that the component is linked into the APK.
+These are component notices, not a blanket license for the application or game-derived material. Source provenance and the limits of this repository are recorded in [COMPONENTS.md](../docs/COMPONENTS.md). Presence of a component license in the source tree does not by itself establish that the component is linked into the APK.
