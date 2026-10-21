@@ -1,0 +1,19 @@
+# Never commit local game data, signing keys, device dumps or credentials.
+/build/
+/local-toolchains.json
+/input/
+/disc/
+/saves/
+/logs/
+*.apk
+*.idsig
+*.keystore
+*.jks
+*.iso
+*.xbe
+*.nfs
+*.tar
+*.log
+__pycache__/
+.env
+.env.*
