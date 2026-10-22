@@ -1,5 +1,7 @@
 ![Need for Speed Underground](docs/images/title.png)
 
+**Русский** · [English](README.en.md)
+
 # NFSU Android
 
 Предварительная версия нативного Android-порта Need for Speed Underground для ARM64 на основе статической рекомпиляции Xbox-версии.
