@@ -1,0 +1,16 @@
+Purple Turnip T30, built and distributed by Mr_Purple_666.
+Original project: https://github.com/MrPurple666/purple-turnip
+Release: https://github.com/MrPurple666/purple-turnip/releases/tag/vturnip_mrpurple_T30-toasted.adpkg
+Original archive: turnip_mrpurple_T30-toasted.adpkg.zip
+Archive SHA256: f65b2d3353fd4aa7190bb5426b94468e99ffea7a58a830bc0c4651db89353227
+Library SHA256: 1d80dfa019659b008e4669311db5b1e4a02af59ff1d5458a98e2f5fe18ed013b
+
+The original archive, meta.json and vulkan.purple.so are preserved byte for byte.
+Driver metadata identifies Mesa as vendor and version 26.3.0-T30-1.4.359.
+Upstream Mesa: https://gitlab.freedesktop.org/mesa/mesa
+Mesa license and copyright information: https://docs.mesa3d.org/license.html
+Individual Mesa components retain their respective licenses and copyrights.
+
+This NFSU integration selects and loads the original driver through adrenotools.
+No change is made to the driver binary. NFSU compatibility testing does not
+establish Vulkan conformance or compatibility with every Adreno device.

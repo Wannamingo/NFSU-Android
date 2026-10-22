@@ -17,3 +17,5 @@ These files retain the original component terms and notices. They do not assign 
 | ANGLE | Binary extracted from RG477M firmware; GLES library subsequently string-patched | `ANGLE-reference-LICENSE.txt` is a reference upstream license, not proof that all notices for the firmware binary are present |
 
 These are component notices, not a blanket license for the application or game-derived material. Source provenance and the limits of this repository are recorded in [COMPONENTS.md](../docs/COMPONENTS.md). Presence of a component license in the source tree does not by itself establish that the component is linked into the APK.
+
+Purple Turnip T30: [происхождение и хеши](Purple-Turnip-T30-NOTICE.txt). Исходный авторский архив включён без изменения содержимого.
