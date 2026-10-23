@@ -4,7 +4,7 @@
 
 # Controls, settings and saved progress
 
-Guide for **0.2.0-preview.4**, dated October 22, 2026. This preview adds built-in Purple Turnip T30 for compatible Adreno GPUs and fixes a custom-driver loader crash. The 20:9 mode, RG477M audio fix, controls and backup features are retained. T30 has had limited compatibility testing on Huawei; no FPS improvement is claimed.
+Guide for **0.2.0-preview.5**, dated October 23, 2026. Fixed incorrect switching between menu and race touch controls during drag racing. 20:9, the RG477M audio fix, Russian and English languages, controls, backups and driver selection including Purple Turnip T30 are retained. T30 compatibility limitations still apply.
 
 The screenshots show the Russian interface. The descriptions below explain the controls in English; select **Settings → Language → English** for the English app interface. Original screenshots are retained as evidence of the tested screens.
 
@@ -48,6 +48,14 @@ The **RACE** label at the top switches to the driving layout. On that layout, th
 | **Ⅱ** | Open the app menu and pause |
 
 The screen supports simultaneous touches: you can hold the accelerator, steer and press other buttons together. Driving buttons have fixed actions; individual A/B/X/Y assignments apply to the full layout and gamepad.
+
+## Drag-racing layout fix
+
+Starting with **0.2.0-preview.5**, the driving buttons remain visible both while stopped and while moving in a drag race. Previously, starting to move could incorrectly switch to the full menu layout and release the held accelerator. Stopping restored the race layout, causing a cycle of repeated switches.
+
+The app now recognizes the separate drag-driving mode. Vehicle speed is not used as a menu indicator. Ordinary races, autopilot and manual layout switching are retained; car-state and ownership checks remain enabled.
+
+After installing the update, fully close and relaunch the game. You do not need to reset button assignments, delete your profile or re-import game files. The user confirmed the fix in a drag race on Huawei. The logic also passed 115 host checks and the same 115 checks on the phone's ARM64 CPU. These checks are not a new FPS comparison or a full validation of every game mode.
 
 ## Button positions and size
 

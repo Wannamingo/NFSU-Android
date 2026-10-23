@@ -2,8 +2,26 @@
 
 # Release notes
 
-English translations of all four public releases. Each section describes that release at publication; later features must not be assumed to exist in earlier APKs. Russian originals remain on the release pages.
+English translations of all five public releases. Each section describes that release at publication; later features must not be assumed to exist in earlier APKs. Russian originals remain on the release pages.
 
+
+## v0.2.0-preview.5
+
+[Release and downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.5)
+
+### NFSU Android v0.2.0-preview.5 — drag-racing touch-layout fix
+
+Fixed automatic touch-layout switching in drag racing. Previously, starting to move could replace the driving buttons with the menu layout, releasing the held accelerator; stopping restored the driving layout. The separate drag mode is now recognized as racing, keeping throttle and gear controls available. Car-state and ownership checks remain enabled. Manual layout switching, ordinary races and autopilot are retained.
+
+**Retained:** 20:9 with correct HUD/menu proportions, 4:3 and 16:9, the RG477M OpenSL ES 512 audio fix, Russian/English, control settings, save backups and transfers, System Vulkan, MaliSX2, Purple Turnip T30 for compatible Adreno GPUs and custom ZIP import. Existing T30 limitations still apply.
+
+Checked: 115 host logic tests and the same 115 on Huawei ARM64; the user confirmed the fix in an actual drag race. The final public APK has the same code and resources as checked test build `54835903`, with changed version metadata and debugging disabled. It was not separately launched on a device. No new FPS comparison or full GPU matrix was performed at this stage.
+
+Version **0.2.0-preview.5**, versionCode **8**, Android ARM64, Android 10+ (T30: Android 11+). Install over the previous version without uninstalling; the signature is compatible. Fully relaunch the game after updating. You do not need to reset controls, delete your profile or re-import the game. Keep an external progress backup before updating.
+
+[English guide](https://github.com/Wannamingo/NFSU-Android/blob/main/docs/GUIDE-EN.md) · [Русская инструкция](https://github.com/Wannamingo/NFSU-Android/blob/main/docs/GUIDE-RU.md) · [Components](https://github.com/Wannamingo/NFSU-Android/blob/main/docs/COMPONENTS-EN.md).
+
+APK SHA256: `021618e64422c05561dbb56a82d9de6e8cab8ca640a448a5b19574e71dc733ac`.
 
 ## v0.2.0-preview.4
 

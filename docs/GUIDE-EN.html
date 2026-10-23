@@ -4,7 +4,7 @@
 </style></head><body><main><p><img src="images/title.png" alt="Need for Speed Underground"></p>
 <p><strong>English</strong> · <a href="GUIDE-RU.md">Русский</a> · <a href="../README.en.md">Project overview</a> · <a href="RELEASE-NOTES-EN.md">Release notes</a></p>
 <h1>Controls, settings and saved progress</h1>
-<p>Guide for <strong>0.2.0-preview.4</strong>, dated October 22, 2026. This preview adds built-in Purple Turnip T30 for compatible Adreno GPUs and fixes a custom-driver loader crash. The 20:9 mode, RG477M audio fix, controls and backup features are retained. T30 has had limited compatibility testing on Huawei; no FPS improvement is claimed.</p>
+<p>Guide for <strong>0.2.0-preview.5</strong>, dated October 23, 2026. Fixed incorrect switching between menu and race touch controls during drag racing. 20:9, the RG477M audio fix, Russian and English languages, controls, backups and driver selection including Purple Turnip T30 are retained. T30 compatibility limitations still apply.</p>
 <p>The screenshots show the Russian interface. The descriptions below explain the controls in English; select <strong>Settings → Language → English</strong> for the English app interface. Original screenshots are retained as evidence of the tested screens.</p>
 <h2>First launch</h2>
 <ol>
@@ -72,6 +72,10 @@
 </tr>
 </tbody></table>
 <p>The screen supports simultaneous touches: you can hold the accelerator, steer and press other buttons together. Driving buttons have fixed actions; individual A/B/X/Y assignments apply to the full layout and gamepad.</p>
+<h2>Drag-racing layout fix</h2>
+<p>Starting with <strong>0.2.0-preview.5</strong>, the driving buttons remain visible both while stopped and while moving in a drag race. Previously, starting to move could incorrectly switch to the full menu layout and release the held accelerator. Stopping restored the race layout, causing a cycle of repeated switches.</p>
+<p>The app now recognizes the separate drag-driving mode. Vehicle speed is not used as a menu indicator. Ordinary races, autopilot and manual layout switching are retained; car-state and ownership checks remain enabled.</p>
+<p>After installing the update, fully close and relaunch the game. You do not need to reset button assignments, delete your profile or re-import game files. The user confirmed the fix in a drag race on Huawei. The logic also passed 115 host checks and the same 115 checks on the phone&#39;s ARM64 CPU. These checks are not a new FPS comparison or a full validation of every game mode.</p>
 <h2>Button positions and size</h2>
 <p><img src="images/control-editor.jpg" alt="Touch-control editor"></p>
 <p>Open <strong>≡ → Touch control positions</strong>. This is also available through the in-game settings. The game pauses while you edit.</p>

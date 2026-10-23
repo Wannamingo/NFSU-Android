@@ -8,7 +8,7 @@ A preview of a native Android ARM64 port of Need for Speed Underground, based on
 
 **[Complete guide: controls, settings, backups and transferring progress](docs/GUIDE-EN.md)**
 
-**[v0.2.0-preview.4 downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.4)** — ARM64 APK, downloadable guides and checksums. [English release history](docs/RELEASE-NOTES-EN.md).
+**[v0.2.0-preview.5 downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.5)** — ARM64 APK, downloadable guides and checksums. [English release history](docs/RELEASE-NOTES-EN.md).
 
 ## Features
 
@@ -24,17 +24,15 @@ A preview of a native Android ARM64 port of Need for Speed Underground, based on
 
 ## Release status
 
-The current public preview is **0.2.0-preview.4**, versionCode 7. It adds a separate built-in **Purple Turnip T30 · Adreno** option using the MrPurple666 package. System Vulkan remains the default; MaliSX2 and custom ZIP import remain available. Built-in T30 does not replace your imported driver package.
+The current public preview is **0.2.0-preview.5**, versionCode 8. It fixes touch-layout switching in drag racing: movement is no longer mistaken for leaving the racing context, so the accelerator and gear buttons stay available.
 
-A custom-driver crash during GPU enumeration is fixed: the loader no longer requires the name `malisx2`. Instead, it matches GPU identity and driver version/UUID against the selected SHA256-verified library. It still rejects a mismatching system-driver substitution.
+The cause was exclusion of the separate drag mode from the game-context check. Memory, state and car-ownership checks remain enabled. Ordinary races, autopilot and manual layout switching are retained. The user confirmed the fix in a drag race on Huawei; 115 checks passed on the host and the same 115 on the phone's ARM64 CPU.
 
-Testing on Huawei covered two T30 cold launches, an image of a loaded race and switching back to System Vulkan. Also passed: 24 ARM64 driver-identity checks, 37 selection-policy checks, four RU/EN interface variants and real ZIP import checks for 4 KB/16 KB pages. This is limited compatibility testing: FPS comparisons, a long race and the full T30 GPU matrix have not been completed. The old full `gpuSelfTest` forces a separate GLES/ANGLE path and failed to create EGL on this Huawei with both System and T30 selected; no successful run is attributed to it.
+The public APK has the same native libraries, DEX, drivers and resources as checked test build `54835903`. Publication changes only AndroidManifest metadata and the launcher version label, with debugging disabled. The final public APK was not separately launched on a device. No new FPS comparison or full GPU matrix was performed for this fix.
 
-The public APK uses the checked code and libraries from test build `fbbe5d71`; only AndroidManifest metadata and the launcher version label differ, with debugging disabled. The final public APK was not separately launched on a phone. Huawei's original APK, controls, settings and saves were restored after testing; the game was closed.
+20:9 with correct HUD/menu proportions, Russian and English, RG477M OpenSL ES 512, controls and backups are retained. System Vulkan remains the default; MaliSX2, built-in Purple Turnip T30 for compatible Adreno GPUs and custom ZIP import remain available. T30 is still experimental: its previous limited Huawei check does not establish compatibility with every Adreno or an FPS gain. See the [English release history](docs/RELEASE-NOTES-EN.md).
 
-20:9, Russian localization, controls, backups and the RG477M OpenSL ES 512 fix are retained. The game library, audio and previous built-in drivers match preview.3 byte for byte. The Unified driver is outside this change.
-
-This is a preview release. The public APK is not debuggable; the private signing key is not distributed. Compatibility with every Mali or Adreno device is not claimed.
+This is a preview release. The private signing key is not distributed. Compatibility with every Mali or Adreno device is not claimed.
 
 ## Game data
 
