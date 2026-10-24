@@ -4,9 +4,9 @@
 
 # Controls, settings and saved progress
 
-Guide for **0.2.0-preview.5**, dated October 23, 2026. Fixed incorrect switching between menu and race touch controls during drag racing. 20:9, the RG477M audio fix, Russian and English languages, controls, backups and driver selection including Purple Turnip T30 are retained. T30 compatibility limitations still apply.
+Guide for **0.2.0-preview.6**, dated October 24, 2026. New touch controls provide one shared pause button, a choice of directional buttons or a neon stick in the in-game settings, and a simplified classic layout. The drag fix, 20:9, RG477M audio, Russian and English, saves and driver selection are retained.
 
-The screenshots show the Russian interface. The descriptions below explain the controls in English; select **Settings → Language → English** for the English app interface. Original screenshots are retained as evidence of the tested screens.
+The aspect-ratio screenshots show the Russian game interface. Select **Settings → Language → English** for the English app interface. This guide describes the current touch UI in text; older control screenshots are not presented as images of this release.
 
 ## First launch
 
@@ -15,39 +15,73 @@ The screenshots show the Russian interface. The descriptions below explain the c
 3. Keep the app open until import finishes. Choose your settings, then tap **Play**.
 4. Create an in-game profile to save your progress. The original game's “account” means a local profile, not a website registration. The Russian **«Создать»** and **«Загрузить»** actions create a profile and open an existing one, respectively.
 
-## Two touch-control layouts
+## Classic and race layouts
 
-### Menu layout
+Starting with **0.2.0-preview.6**, touch controls provide a simplified classic layout for menus and a race layout with either directional buttons or a round neon stick. Both use **one shared pause button, Ⅱ**. There are no separate ≡ or MENU buttons, and the gear beside FPS has been removed.
 
-![Menu control layout](images/menu-controls.jpg)
+### Classic layout
 
-The screen provides a D-pad, two virtual sticks, A/B/X/Y, L1/L2/L3, R1/R2/R3, Start, Select and **≡**. This layout reproduces Xbox controls; the action depends on the current game screen and your assignments.
+The D-pad, A/B/X/Y, Start, Select and shared pause Ⅱ remain available. Both virtual sticks and the on-screen L1/L2/L3/R1/R2/R3 buttons have been removed. This simplifies the touch overlay; physical gamepad controls and assignments are retained.
 
 - Use the D-pad to select menu items.
-- In the tested RG477M configuration, **B** confirms selections inside NFSU. If your physical button labels differ, check the A/B swap setting and individual assignments. Follow the game's prompts for each screen.
-- **≡** opens the app menu with pause, settings and return-to-launcher actions.
-- By default, **Select** also opens the app menu. **Start** sends the game's normal pause action.
-- Android settings screens use different navigation: **A** selects an item and **B** goes back.
+- In the tested RG477M configuration, **B** confirms selections inside NFSU. If physical letter positions differ, check the A/B swap and assignments; also follow the game's prompts.
+- **Ⅱ** opens the app menu and pauses the game. It provides Resume game, Settings, the touch-position editor and return to launcher.
+- By default, **Select** also opens the app menu; **Start** sends the game's own pause action.
+- In Android settings screens, **A** selects and **B** goes back.
 
-The **RACE** label at the top switches to the driving layout. On that layout, the label becomes **MENU**, which restores the full button set. This changes the touch controls; it does not start a race or open NFSU's main menu. The app also selects the layout automatically when the game context changes.
+The **RACE** toggle selects the driving controls. In the race layout it reads **CLASSIC** and returns to the classic controls. It does not start a race or open the pause menu. Automatic context selection remains available, including the drag-racing fix.
 
-### Race layout
+### Driving controls
 
-![Driving controls](images/race-controls.jpg)
-
-| Control shown in the screenshot | Action |
+| Control | Action |
 | --- | --- |
-| **ЛЕВО / ПРАВО — LEFT / RIGHT** | Steer the car |
-| **ГАЗ — ACCELERATE** | Accelerate |
-| **ТОРМОЗ / НАЗАД — BRAKE / REVERSE** | Brake or reverse according to the game's rules |
-| **РУЧНИК — HANDBRAKE** | Apply the handbrake |
-| **ПЕРЕДАЧА + / − — GEAR + / −** | Shift up or down; particularly relevant with manual transmission |
-| **НИТРО — NITRO** | Use the nitrous available in the game |
-| **СМЕНА ВИДА — CHANGE VIEW** | Switch camera |
-| **ВЗГЛЯД НАЗАД — LOOK BACK** | Look behind while held |
-| **Ⅱ** | Open the app menu and pause |
+| **LEFT / RIGHT** or **neon stick** | Steer using the selected input style |
+| **GAS** | Accelerate |
+| **BRAKE / REVERSE** | Brake or reverse according to the game's rules |
+| **HANDBRAKE** | Apply the handbrake |
+| **GEAR + / −** | Shift up or down, including manual transmission and drag racing |
+| **NITRO** | Use the available nitrous |
+| **CAMERA** | Switch camera |
+| **LOOK BACK** | Look behind while held |
+| **Ⅱ** | Shared pause and app menu |
 
-The screen supports simultaneous touches: you can hold the accelerator, steer and press other buttons together. Driving buttons have fixed actions; individual A/B/X/Y assignments apply to the full layout and gamepad.
+Simultaneous touches are supported: hold the accelerator while steering and shifting. These controls have fixed driving actions; individual A/B/X/Y assignments apply to classic buttons and the gamepad.
+
+### Choosing buttons or the stick
+
+1. With the game running, open **Ⅱ → Settings**.
+2. Under **Race steering**, choose **Left / right buttons** or **Neon stick**.
+3. Select **Resume game**. The choice applies on return and persists after restarting the app.
+
+**This option is available only in the in-game settings. Neither launcher offers it.** New installations use directional buttons; updating does not reset an existing selection.
+
+The stick provides horizontal analog steering: move it left or right to control the amount of steering. Vertical movement does not replace the accelerator or brake; use their separate buttons. Releasing the stick returns steering to neutral. Its size and position can be adjusted in the race-layout editor.
+
+### One shared pause button
+
+**Ⅱ** uses the same saved position and size in the classic and race layouts. It stays visible and usable even with **Touch controls → Hide**, or when Auto hides the other controls because a gamepad is connected. Settings and exit therefore remain accessible on screen.
+
+## Button positions and size
+
+Open **Ⅱ → Touch control positions**, or the same entry in the in-game settings. The editor pauses the game.
+
+1. Drag controls in the current layout. Configure the other layout separately; pause Ⅱ is shared.
+2. In the race layout, the **Size** slider adjusts controls from **40% to 100%**, including the race stick. It does not change resolution or car speed.
+3. Tap **Save**. Positions and size persist after restarting. Updating does not reset previously saved coordinates or size.
+
+**Reset** restores default positions and, in the race layout, 100% size; tap Save to keep the reset. **Cancel** restores the state from before editing. On a gamepad, Start saves changes; Select or Android Back cancels them. After closing the editor, choose Resume game.
+
+## Gamepads and button assignments
+
+Assignments have separate **Touch controls** and **Gamepad** tabs. The first lists available classic touch buttons; the shared pause button always opens the app menu and is not an assignable ≡ button.
+
+Physical gamepads retain the Xbox actions: D-pad, Start, Back, stick clicks, A/B/X/Y, Black, White, LT, RT, app menu or Unassigned. Removing extra touch controls does not remove a physical gamepad's shoulder buttons or sticks.
+
+- Default mapping: **L1 → Black, R1 → White, L2 → LT, R2 → RT**.
+- **Swap A/B and X/Y** supports a different physical letter order; individual assignments take priority.
+- Assignments save immediately: launcher changes apply on the next launch, in-game changes when you return to the game.
+- **Reset layout** resets the selected tab's assignments, not your career or touch-control coordinates.
+
 
 ## Drag-racing layout fix
 
@@ -57,29 +91,6 @@ The app now recognizes the separate drag-driving mode. Vehicle speed is not used
 
 After installing the update, fully close and relaunch the game. You do not need to reset button assignments, delete your profile or re-import game files. The user confirmed the fix in a drag race on Huawei. The logic also passed 115 host checks and the same 115 checks on the phone's ARM64 CPU. These checks are not a new FPS comparison or a full validation of every game mode.
 
-## Button positions and size
-
-![Touch-control editor](images/control-editor.jpg)
-
-Open **≡ → Touch control positions**. This is also available through the in-game settings. The game pauses while you edit.
-
-1. Drag controls to comfortable positions. The editor moves controls in the current layout; configure the other layout separately.
-2. In the race layout, the **Size** slider adjusts button size from **40% to 100%**. It does not change the game's resolution or the car's speed.
-3. Tap **Save** to store positions and size. They persist after restarting the app.
-
-**Reset** restores the default positions; in the race layout it also restores 100% size. Tap Save to keep the reset. **Cancel** restores the state from before you opened the editor. On a gamepad, Start saves changes; Select or Android Back cancels them. After closing the editor, you can choose **Resume game**.
-
-## Gamepads and button assignments
-
-![Full gamepad layout over a race](images/gamepad-overlay.jpg)
-
-Settings has separate **Touch buttons** and **Gamepad** tabs. Each position can be assigned an Xbox action: D-pad, Start, Back, stick clicks, A/B/X/Y, Black, White, LT, RT, the app menu or Unassigned.
-
-- Default shoulder mapping: **L1 → Black, R1 → White, L2 → LT, R2 → RT**.
-- **Swap A/B and X/Y** supports physical gamepads with a different letter order. Individual assignments override the general swap.
-- Assignments save immediately. Changes made in the launcher apply on the next launch; changes made in the in-game settings apply when you return to the game.
-- **Reset layout** resets the assignments of the selected tab. It does not erase your career or reset touch-button coordinates.
-
 ## Performance defaults on a new installation
 
 For a new installation, the public build enables a separate render thread, dynamic geometry arenas and car-reflection updates once every three frames. The last setting reduces the update rate of reflections on the bodywork; the main scene still renders every frame. Updating the app does not overwrite existing settings.
@@ -88,7 +99,7 @@ Some older test APKs enabled these options only through a saved internal configu
 
 ## Graphics and app settings
 
-Launcher settings save automatically. During gameplay, tap the gear beside the FPS counter to pause and open settings. Some options are available there; the graphics driver and FPS limit are selected in the launcher and require a new game launch.
+Launcher settings save automatically. During gameplay, open **Ⅱ → Settings** to pause and change settings. Some options are available there; the graphics driver and FPS limit are selected in the launcher and require a new game launch.
 
 | Setting | Options and effect |
 | --- | --- |
@@ -98,7 +109,8 @@ Launcher settings save automatically. During gameplay, tap the gear beside the F
 | **Graphics driver** | System Vulkan, MaliSX2 for compatible Mali GPUs, Purple Turnip T30 · Adreno, or a custom driver imported from ZIP. System Vulkan is the default. |
 | **Install ZIP…** | Import a compatible custom driver. The package must match your GPU and Android version; being a ZIP does not guarantee compatibility. The change is confined to this app and does not replace Android's system driver. |
 | **Remove driver** | Remove the imported package and return to the system driver. Restart the game to apply. |
-| **Touch controls** | Auto hides controls when a gamepad is detected; Show keeps them visible; Hide removes them. |
+| **Touch controls** | Auto hides the main controls when a gamepad is detected; Show keeps them visible; Hide removes them. The shared pause button Ⅱ remains accessible. |
+| **Race steering** | In-game settings only: Left / right buttons or the analog Neon stick. Applies after Resume game and persists after restarting. |
 | **Language** | Russian or English. Changes the app interface; the language of game resources applies on a new game launch. |
 
 ### Purple Turnip T30 for Adreno
@@ -115,9 +127,11 @@ Source: [Purple Turnip T30, MrPurple666](https://github.com/MrPurple666/purple-t
 
 ### 20:9 mode
 
-In the launcher, choose **Settings → Aspect ratio → 20:9**. During gameplay, open the gear beside FPS or **≡ → Settings**, select **Aspect ratio → 20:9**, then **Resume game**. You can switch between 4:3, 16:9 and 20:9 without relaunching the game. Your choice persists after restarting the app.
+In the launcher, choose **Settings → Aspect ratio → 20:9**. During gameplay, open **Ⅱ → Settings**, select **Aspect ratio → 20:9**, then **Resume game**. You can switch between 4:3, 16:9 and 20:9 without relaunching the game. Your choice persists after restarting the app.
 
 20:9 shows more of the environment on both sides while preserving the vertical field of view. The car, round speedometer, text and menu elements retain their proportions. The HUD and menus stay within a central 4:3 area rather than spreading to the outer edges. Touch controls can be positioned separately in the editor.
+
+These aspect-ratio checks were captured before the new touch UI. Use them to compare scene coverage and HUD proportions; use the sections above for the current control layout.
 
 **4:3 on Huawei:**
 

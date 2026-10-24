@@ -8,13 +8,13 @@ A preview of a native Android ARM64 port of Need for Speed Underground, based on
 
 **[Complete guide: controls, settings, backups and transferring progress](docs/GUIDE-EN.md)**
 
-**[v0.2.0-preview.5 downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.5)** — ARM64 APK, downloadable guides and checksums. [English release history](docs/RELEASE-NOTES-EN.md).
+**[v0.2.0-preview.6 downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.6)** — ARM64 APK, downloadable guides and checksums. [English release history](docs/RELEASE-NOTES-EN.md).
 
 ## Features
 
 - A dedicated Vulkan renderer, a separate graphics-preparation thread, geometry arenas and prepared state keys.
 - System Vulkan, built-in MaliSX2, Purple Turnip T30 for compatible Adreno GPUs, and custom driver ZIP import.
-- A full touch gamepad layout and dedicated driving buttons, draggable controls and race-button sizing from 40% to 100%.
+- Classic and race touch layouts, directional buttons or a neon stick, shared pause, draggable controls and race-button sizing from 40% to 100%.
 - Gamepad support, separate touch/gamepad assignments, and A/B and X/Y swapping.
 - 4:3, 16:9 and 20:9 with preserved HUD and menu proportions; 1×/2×/3× internal resolution and a 60 or 120 FPS limit.
 - Russian and English interfaces.
@@ -24,15 +24,15 @@ A preview of a native Android ARM64 port of Need for Speed Underground, based on
 
 ## Release status
 
-The current public preview is **0.2.0-preview.5**, versionCode 8. It fixes touch-layout switching in drag racing: movement is no longer mistaken for leaving the racing context, so the accelerator and gear buttons stay available.
+The current public version is **0.2.0-preview.6**, versionCode 9. The shared Mali/Adreno app now has one pause button Ⅱ, race steering through directional buttons or a round neon stick, and a classic layout without either stick or the on-screen L1/L2/L3/R1/R2/R3 buttons.
 
-The cause was exclusion of the separate drag mode from the game-context check. Memory, state and car-ownership checks remain enabled. Ordinary races, autopilot and manual layout switching are retained. The user confirmed the fix in a drag race on Huawei; 115 checks passed on the host and the same 115 on the phone's ARM64 CPU.
+Choose steering only while the game is running: **Ⅱ → Settings → Race steering → Resume game**. Neither launcher offers this option. Pause remains accessible when other touch controls are hidden. Separate ≡, MENU and gear buttons are removed; the layout toggle reads CLASSIC / RACE.
 
-The public APK has the same native libraries, DEX, drivers and resources as checked test build `54835903`. Publication changes only AndroidManifest metadata and the launcher version label, with debugging disabled. The final public APK was not separately launched on a device. No new FPS comparison or full GPU matrix was performed for this fix.
+The user confirmed V2 on Huawei. Passed: 3205 steering checks, 2170 shared-pause checks and the previous neon-rendering and button-size suites. The public APK has the same DEX, native libraries, drivers and resources as accepted Huawei APK `1c698434`; only AndroidManifest and the launcher version label differ. The final public APK was not separately launched on a device; no new GPU matrix, RG477M check or FPS comparison was performed.
 
-20:9 with correct HUD/menu proportions, Russian and English, RG477M OpenSL ES 512, controls and backups are retained. System Vulkan remains the default; MaliSX2, built-in Purple Turnip T30 for compatible Adreno GPUs and custom ZIP import remain available. T30 is still experimental: its previous limited Huawei check does not establish compatibility with every Adreno or an FPS gain. See the [English release history](docs/RELEASE-NOTES-EN.md).
+The drag fix, 20:9 with preserved HUD/menu proportions, RG477M OpenSL ES 512 audio, languages, settings, profiles and backups are retained. System Vulkan remains the default; MaliSX2, experimental Purple Turnip T30 for compatible Adreno GPUs and custom ZIP import remain available. This work does not change the Unified driver.
 
-This is a preview release. The private signing key is not distributed. Compatibility with every Mali or Adreno device is not claimed.
+This is a preview release. The private signing key is not distributed; compatibility with every Mali or Adreno device is not claimed.
 
 ## Game data
 

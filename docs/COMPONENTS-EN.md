@@ -8,21 +8,21 @@ This repository contains application releases and user documentation. It is not 
 
 | Field | Value |
 | --- | --- |
-| Version | 0.2.0-preview.5, versionCode 8, debuggable disabled |
+| Version | 0.2.0-preview.6, versionCode 9, debuggable disabled |
 | Architecture | Android ARM64; app requires Android 10+, T30 requires Android 11+ |
-| APK SHA-256 | `021618e64422c05561dbb56a82d9de6e8cab8ca640a448a5b19574e71dc733ac` |
-| Checked test APK | `548359030cb78e689ce13949641de7d78188f055f570ffa7216e1f73ecd95670` |
+| APK SHA-256 | `f075082c8092c93a5d58f9d791f81ba6b6c9cdc2b23a7ce3076081ffe91a205e` |
+| Checked test APK | `1c698434dbff09ba0e6611ad749f42033a42c331145d110bd6c59868dce679c8` |
 | Fixed custom-driver loader | `27e55484ad419a5e20985bcc7da00793fa0dc1eff3d2cfa3ef45746920aacc48` |
 | Original T30 ZIP SHA-256 | `f65b2d3353fd4aa7190bb5426b94468e99ffea7a58a830bc0c4651db89353227` |
 | vulkan.purple.so SHA-256 | `1d80dfa019659b008e4669311db5b1e4a02af59ff1d5458a98e2f5fe18ed013b` |
 
-This release changes only native racing-context detection. Drag mode is now recognized alongside ordinary driving and autopilot, while range, finite-value and player/car relationship checks are retained. Java/DEX, audio, drivers, Russian localization, 20:9 and other resources are preserved from preview.4. The public APK differs from checked test build `54835903` only in AndroidManifest and the HTML version label; it was not separately launched on a device.
+This release changes Java/DEX touch controls and launcher hints. All native libraries, drivers, audio, Russian localization and game additions are byte-identical to preview.5. The drag fix and 20:9 therefore remain in the same native code. The public APK preserves the DEX/native/drivers/assets of user-accepted Huawei APK `1c698434`; only AndroidManifest and the HTML version label differ. The public APK itself was not separately launched on a phone.
 
-Fix verification: 115 host tests and the same 115 on Huawei ARM64, an image of the moving drag car with driving controls, and user confirmation. No full GPU matrix, long race or new FPS comparison was performed at this stage. Control, language and render settings were checked for preservation; the user's new progress was not rolled back.
+Acceptance: the user confirmed V2 on Huawei; 3205 steering checks, 2170 shared-pause checks and the previous neon-rendering and sizing suites passed. They validate input/layout logic, not a new GPU matrix, FPS comparison or every Mali/Adreno device. The new UI was not checked on RG477M at this stage. Steering choice is separate from positions and physical assignments; the accepted Huawei update retained UID, settings and render configuration without clearing data.
 
-Purple Turnip checks belong to preview.4: two T30 cold launches through actual Android WSI on Huawei HWMNA, an image of a loaded race and switching back to System Vulkan. This is neither a full compatibility matrix nor a performance measurement. The old full GPU test enables a separate GLES/ANGLE path and did not create EGL on this device with either System or T30 selected; its groups are not claimed as passed by this release.
+Historical checks retain their original scope: preview.5's drag fix passed 115 host and 115 Huawei ARM64 checks and was confirmed in drag racing. Preview.4 T30 checks covered two cold launches, a race image and return to System Vulkan on Huawei HWMNA. The old full GLES/ANGLE GPU test did not create EGL with either driver on this Huawei; no successful run is claimed.
 
-The release includes a small separate source archive for this fix: the context-check header, call-site patch and tests. The separate preview.4 archive of Java/launcher and fixed custom-loader sources with AdrenoTools is retained. These are integration sources, not a complete tree for building the game's libmain.so. GitHub's standard Source code archives contain the repository documentation.
+The release includes a new UI source archive and retains the small drag-fix source patch. These packages contain the corresponding integration sources, not a complete tree for building the game's libmain.so. Fixed custom-loader sources and its AdrenoTools dependency are also provided separately. GitHub's standard Source code archives contain this repository's documentation.
 
 ## Main dependencies
 

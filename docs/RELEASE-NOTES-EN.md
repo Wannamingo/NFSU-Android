@@ -2,8 +2,30 @@
 
 # Release notes
 
-English translations of all five public releases. Each section describes that release at publication; later features must not be assumed to exist in earlier APKs. Russian originals remain on the release pages.
+English translations of all six public releases. Each section describes that release at publication; later features must not be assumed to exist in earlier APKs. Russian originals remain on the release pages.
 
+
+## v0.2.0-preview.6
+
+[Release and downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.6)
+
+### NFSU Android v0.2.0-preview.6 — new touch controls
+
+- One shared **Ⅱ pause button** in classic and race layouts, accessible even when other touch controls are hidden.
+- Race steering through **Left / right buttons** or a round **analog Neon stick**. Choose it only while running the game: **Ⅱ → Settings → Race steering → Resume game**. Neither launcher offers the option.
+- A simplified classic layout: both virtual sticks and on-screen L1/L2/L3/R1/R2/R3 are removed; physical gamepads retain their functions.
+- Separate ≡, MENU and the gear beside FPS are removed. The layout toggle reads **CLASSIC / RACE**.
+- Steering selection, control positions and size, assignments, language and profiles are retained.
+
+Retained: **the drag fix, 20:9, RG477M audio fix, Russian and English, backups and driver selection**: System Vulkan, MaliSX2, Purple Turnip T30 and custom ZIP. Native libraries and drivers are byte-identical to the previous release; the Universal/Unified Mali ICD is unchanged.
+
+The user confirmed V2 on Huawei. Passed: 3205 steering checks, 2170 shared-pause checks and previous neon/sizing suites. The public APK has the same DEX/native/drivers/assets as accepted Huawei build `1c698434`; publication changes only Manifest and the HTML version, with debugging disabled. The final APK was not separately launched on a device. No new FPS/GPU/RG477M checks were performed at this stage.
+
+**0.2.0-preview.6**, versionCode **9**, Android ARM64, Android 10+ (T30: Android 11+). Install over the previous version without uninstalling, then fully relaunch the game. Keep an external progress backup before updating. New installations use buttons; an existing selection is retained.
+
+[English guide](https://github.com/Wannamingo/NFSU-Android/blob/main/docs/GUIDE-EN.md) · [Русская инструкция](https://github.com/Wannamingo/NFSU-Android/blob/main/docs/GUIDE-RU.md) · [Components](https://github.com/Wannamingo/NFSU-Android/blob/main/docs/COMPONENTS-EN.md).
+
+APK SHA256: `f075082c8092c93a5d58f9d791f81ba6b6c9cdc2b23a7ce3076081ffe91a205e`.
 
 ## v0.2.0-preview.5
 
