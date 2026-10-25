@@ -4,9 +4,29 @@
 
 # Controls, settings and saved progress
 
-Guide for **0.2.0-preview.6**, dated October 24, 2026. New touch controls provide one shared pause button, a choice of directional buttons or a neon stick in the in-game settings, and a simplified classic layout. The drag fix, 20:9, RG477M audio, Russian and English, saves and driver selection are retained.
+Guide for **0.2.0-preview.7**, dated October 25, 2026. Vulkan texture memory accounting is corrected to address a renderer-budget exit during consecutive career races. Retained: the new touch controls with buttons or a neon stick and shared pause Ⅱ, the drag-racing layout fix, 4:3/16:9/20:9 with preserved HUD/menu proportions, fixed RG477M audio, Russian and English, settings, saved progress, and System Vulkan, MaliSX2, Purple Turnip T30 and custom ZIP driver selection.
 
 The aspect-ratio screenshots show the Russian game interface. Select **Settings → Language → English** for the English app interface. This guide describes the current touch UI in text; older control screenshots are not presented as images of this release.
+
+## Fix for the career memory-budget exit
+
+In the submitted log, the game returned to the launcher when its renderer reached the **512 MiB** budget while loading the next track. The texture cache counted RGBA pixel bytes, while the actual Vulkan allocation could be substantially larger because of driver requirements. Reconstructible textures were therefore evicted too late.
+
+In **0.2.0-preview.7**, the cache and texture prewarm account for the current Vulkan device's memory requirements, including possible mip-chain growth. Unused GPU copies that can be reconstructed are evicted earlier. Current texture inputs, render targets and dependent resources remain protected; deletion still waits for GPU completion.
+
+Budgets are unchanged: **128 MiB** for the ordinary cache, **64 MiB** for prewarm and **512 MiB** for the overall renderer. These are not a limit on the app's total RAM. Source and palette change checks remain enabled; mip levels and texture quality are retained. This fix applies to Vulkan; GLES is unchanged.
+
+Install the update over the previous version **without uninstalling or clearing app data**, then fully relaunch the game. Reimporting game data or moving a profile is not needed for this fix. Keep an external progress backup before updating, as described below.
+
+### Test scope
+
+On October 25, 2026, the user manually completed the entire original problem tournament **«Субботний драйв» — all four stages** — on **RG477M / MaliSX2**, at 2×, 4:3 and a 60 FPS cap. The submitted save was copied exactly; the game process stayed alive across the stages and no autopilot was used. No crashes or memory-budget refusals were recorded during the series. The user confirmed tournament completion and that the new save loads; new progress was kept and the existing profile was not overwritten.
+
+The highest recorded renderer allocation total in periodic samples was **314.20 MiB against a 512 MiB budget**. This is the maximum among logged samples, not a continuously measured peak or the app's total RAM. The cache stayed within 128 MiB, with 1,707 evictions and 69 restorations recorded. These counters confirm that the memory policy ran; they do not measure an FPS gain.
+
+This is one complete manual run of the specified series on RG477M/MaliSX2. No new FPS comparison or complete device/driver matrix is claimed.
+
+Additional checks passed: 8,803 host memory-accounting checks and four GPU test groups for the new library on Huawei. The original log used System Vulkan on **Mali-G610 MC6**, rather than RG477M's stock GPU. Acceptance covers the stated device and driver; it does not reproduce the original Mali-G610 case. This release does not promise higher FPS or eliminate every possible exit: non-evictable resources can still exhaust the overall guard.
 
 ## First launch
 

@@ -8,7 +8,7 @@ A preview of a native Android ARM64 port of Need for Speed Underground, based on
 
 **[Complete guide: controls, settings, backups and transferring progress](docs/GUIDE-EN.md)**
 
-**[v0.2.0-preview.6 downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.6)** — ARM64 APK, downloadable guides and checksums. [English release history](docs/RELEASE-NOTES-EN.md).
+**[v0.2.0-preview.7 downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.7)** — ARM64 APK, downloadable guides and checksums. [English release history](docs/RELEASE-NOTES-EN.md).
 
 ## Features
 
@@ -24,15 +24,17 @@ A preview of a native Android ARM64 port of Need for Speed Underground, based on
 
 ## Release status
 
-The current public version is **0.2.0-preview.6**, versionCode 9. The shared Mali/Adreno app now has one pause button Ⅱ, race steering through directional buttons or a round neon stick, and a classic layout without either stick or the on-screen L1/L2/L3/R1/R2/R3 buttons.
+The current public version is **0.2.0-preview.7**, versionCode **10**. Cache and prewarm accounting now use real Vulkan texture allocation requirements. Counting RGBA bytes could previously allow a memory-budget exit while loading the next career track.
 
-Choose steering only while the game is running: **Ⅱ → Settings → Race steering → Resume game**. Neither launcher offers this option. Pause remains accessible when other touch controls are hidden. Separate ≡, MENU and gear buttons are removed; the layout toggle reads CLASSIC / RACE.
+On October 25, 2026, the user manually completed the entire original problem tournament **«Субботний драйв» — all four stages** — on **RG477M / MaliSX2**, at 2×, 4:3 and a 60 FPS cap. The submitted save was copied exactly; the game process stayed alive across the stages and no autopilot was used. No crashes or memory-budget refusals were recorded during the series. The user confirmed tournament completion and that the new save loads; new progress was kept and the existing profile was not overwritten.
 
-The user confirmed V2 on Huawei. Passed: 3205 steering checks, 2170 shared-pause checks and the previous neon-rendering and button-size suites. The public APK has the same DEX, native libraries, drivers and resources as accepted Huawei APK `1c698434`; only AndroidManifest and the launcher version label differ. The final public APK was not separately launched on a device; no new GPU matrix, RG477M check or FPS comparison was performed.
+The highest recorded renderer allocation total in periodic samples was **314.20 MiB against a 512 MiB budget**. This is the maximum among logged samples, not a continuously measured peak or the app's total RAM. The cache stayed within 128 MiB, with 1,707 evictions and 69 restorations recorded. These counters confirm that the memory policy ran; they do not measure an FPS gain.
 
-The drag fix, 20:9 with preserved HUD/menu proportions, RG477M OpenSL ES 512 audio, languages, settings, profiles and backups are retained. System Vulkan remains the default; MaliSX2, experimental Purple Turnip T30 for compatible Adreno GPUs and custom ZIP import remain available. This work does not change the Unified driver.
+This is one complete manual run of the specified series on RG477M/MaliSX2. No new FPS comparison or complete device/driver matrix is claimed.
 
-This is a preview release. The private signing key is not distributed; compatibility with every Mali or Adreno device is not claimed.
+Retained: the new touch controls with buttons or a neon stick and shared pause Ⅱ, the drag-racing layout fix, 4:3/16:9/20:9 with preserved HUD/menu proportions, fixed RG477M audio, Russian and English, settings, saved progress, and System Vulkan, MaliSX2, Purple Turnip T30 and custom ZIP driver selection.
+
+Memory budgets and texture quality are retained. This is a preview release; the guide explains the fix and its test scope. Update without uninstalling and keep an external progress backup first.
 
 ## Game data
 

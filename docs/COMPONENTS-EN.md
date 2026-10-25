@@ -8,21 +8,29 @@ This repository contains application releases and user documentation. It is not 
 
 | Field | Value |
 | --- | --- |
-| Version | 0.2.0-preview.6, versionCode 9, debuggable disabled |
+| Version | 0.2.0-preview.7, versionCode 10, debuggable disabled |
 | Architecture | Android ARM64; app requires Android 10+, T30 requires Android 11+ |
-| APK SHA-256 | `f075082c8092c93a5d58f9d791f81ba6b6c9cdc2b23a7ce3076081ffe91a205e` |
-| Checked test APK | `1c698434dbff09ba0e6611ad749f42033a42c331145d110bd6c59868dce679c8` |
+| APK SHA-256 | `19902e72b47a0b2091d2213fe8b2c28650198192df53b079849c2a4df9a4f354` |
+| Checked test APK | `b99b38516827a9c2f8956dc2ab025a4a388a51233b5e83d45baddbcf315650f5` |
 | Fixed custom-driver loader | `27e55484ad419a5e20985bcc7da00793fa0dc1eff3d2cfa3ef45746920aacc48` |
 | Original T30 ZIP SHA-256 | `f65b2d3353fd4aa7190bb5426b94468e99ffea7a58a830bc0c4651db89353227` |
 | vulkan.purple.so SHA-256 | `1d80dfa019659b008e4669311db5b1e4a02af59ff1d5458a98e2f5fe18ed013b` |
 
-This release changes Java/DEX touch controls and launcher hints. All native libraries, drivers, audio, Russian localization and game additions are byte-identical to preview.5. The drag fix and 20:9 therefore remain in the same native code. The public APK preserves the DEX/native/drivers/assets of user-accepted Huawei APK `1c698434`; only AndroidManifest and the HTML version label differ. The public APK itself was not separately launched on a phone.
+Only the game libmain.so changes from preview.6, correcting Vulkan cache and prewarm memory accounting. New-control DEX, other libraries, drivers, audio and game assets are byte-identical. Publication changes Manifest metadata and the HTML version label only. The drag fix and 20:9 remain in the native base.
 
-Acceptance: the user confirmed V2 on Huawei; 3205 steering checks, 2170 shared-pause checks and the previous neon-rendering and sizing suites passed. They validate input/layout logic, not a new GPU matrix, FPS comparison or every Mali/Adreno device. The new UI was not checked on RG477M at this stage. Steering choice is separate from positions and physical assignments; the accepted Huawei update retained UID, settings and render configuration without clearing data.
+On October 25, 2026, the user manually completed the entire original problem tournament **«Субботний драйв» — all four stages** — on **RG477M / MaliSX2**, at 2×, 4:3 and a 60 FPS cap. The submitted save was copied exactly; the game process stayed alive across the stages and no autopilot was used. No crashes or memory-budget refusals were recorded during the series. The user confirmed tournament completion and that the new save loads; new progress was kept and the existing profile was not overwritten.
+
+The highest recorded renderer allocation total in periodic samples was **314.20 MiB against a 512 MiB budget**. This is the maximum among logged samples, not a continuously measured peak or the app's total RAM. The cache stayed within 128 MiB, with 1,707 evictions and 69 restorations recorded. These counters confirm that the memory policy ran; they do not measure an FPS gain.
+
+This is one complete manual run of the specified series on RG477M/MaliSX2. No new FPS comparison or complete device/driver matrix is claimed.
+
+Passed: 8,803 host checks and four headless GPU test groups on Huawei. No new FPS comparison or complete driver matrix is claimed. The original refusal was logged on Mali-G610 MC6/System Vulkan; Huawei/Adreno is a separate device. The 128/64/512 MiB budgets, resource protection, fence-owned deletion and change checks are retained.
 
 Historical checks retain their original scope: preview.5's drag fix passed 115 host and 115 Huawei ARM64 checks and was confirmed in drag racing. Preview.4 T30 checks covered two cold launches, a race image and return to System Vulkan on Huawei HWMNA. The old full GLES/ANGLE GPU test did not create EGL with either driver on this Huawei; no successful run is claimed.
 
 The release includes a new UI source archive and retains the small drag-fix source patch. These packages contain the corresponding integration sources, not a complete tree for building the game's libmain.so. Fixed custom-loader sources and its AdrenoTools dependency are also provided separately. GitHub's standard Source code archives contain this repository's documentation.
+
+Also included: `NFSU-career-memory-fix-source.zip`, containing the accounting diff against preview.6 and associated tests. It is the source of this specific fix, not a complete reproducible APK project. User saves, private device logs and the signing key are excluded.
 
 ## Main dependencies
 
