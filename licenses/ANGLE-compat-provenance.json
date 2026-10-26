@@ -1,0 +1,15 @@
+{
+  "component": "ANGLE",
+  "distribution": "kubuszok/sge-angle-natives chromium-7151",
+  "archive_url": "https://github.com/kubuszok/sge-angle-natives/releases/download/chromium-7151/angle-android-arm64.tar.gz",
+  "archive_sha256": "e93aaece7b1048dcb1fab9102b5df001c8a5d83ee3dbc4fca1d0b6cf1c1d18f9",
+  "angle_source_commit": "df9c59dcacff7d186d00e3263a1aa68f8059137c",
+  "paired_binaries": {
+    "libEGL_angle.so": "5f2a921ca6eea7ff074670bb511b28d364cf38591a38bd6dd0a914a3969e89c2",
+    "libGLESv2_angle.so": "dcb64eb358a5aeef7d4f8d07a3decb4bed1df0f23b54101ee0b8fccf67cc2e40"
+  },
+  "compiled_locally": false,
+  "binary_instruction_patching": false,
+  "actual_redmi_execution_tested": false,
+  "scope": "Bundled matched ANGLE pair in NFSU Android preview.8. Prebuilt upstream-based libraries, not a local rebuild. RG477M smoke testing does not establish Redmi/Snapdragon 685 or 730 execution. The older component run labelled System used an app-local Vulkan proxy; it is not independent proof of the native system driver. Component licenses retain their individual scope."
+}

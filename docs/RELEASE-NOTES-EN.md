@@ -2,8 +2,27 @@
 
 # Release notes
 
-English translations of all seven public releases. Each section describes that release at publication; later features must not be assumed to exist in earlier APKs. Russian originals remain on the release pages.
+English translations of all eight public releases. Each section describes that release at publication; later features must not be assumed to exist in earlier APKs. Russian originals remain on the release pages.
 
+
+## v0.2.0-preview.8
+
+[Release and downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.8)
+
+### NFSU Android v0.2.0-preview.8 — audio selection and auto-rotation
+
+October 26, 2026. Android ARM64, Android 10+, versionCode 11.
+
+- Launcher audio selection: Auto / OpenSL ES · 512 on every CPU/GPU, including Snapdragon 730. Applies on the next game launch. Auto retains the existing policy.
+- Sensor-driven rotation to either landscape side in the game, launcher and menus; SDL's orientation override is corrected. Aspect ratio is retained and held touch buttons are released on rotation.
+- Matched ANGLE Chromium 7151 libraries for older ARM64 CPUs. Successful Redmi Note 13 4G / Snapdragon 685 startup remains unverified on that phone.
+- Retains preview.7 controls, the drag-layout fix, 20:9 and HUD proportions, Russian/English, System/MaliSX2/Purple Turnip/custom ZIP selection, save backups and the career memory fix.
+
+The test build on RG477M confirmed actual OpenSL ES 48 kHz stereo / 512 frames. Both rendered orientations, touch pause and settings were checked using software display rotation. Physical phone flipping, Snapdragon 730 execution and prolonged Bluetooth listening were not tested in this phase. Native game code is unchanged from preview.7; the earlier Saturday Drive tournament acceptance belongs to preview.7. No FPS improvement or repeated full-career qualification is claimed for this release.
+
+Install over the existing app without uninstalling or clearing data. Progress, language and settings are retained. Keep an external profile backup before updating. You must supply your own compatible original game data; it is not included in downloads.
+
+[English guide](https://github.com/Wannamingo/NFSU-Android/blob/main/docs/GUIDE-EN.md) · [Русская инструкция](https://github.com/Wannamingo/NFSU-Android/blob/main/docs/GUIDE-RU.md)
 
 ## v0.2.0-preview.7
 

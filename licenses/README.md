@@ -14,7 +14,7 @@ These files retain the original component terms and notices. They do not assign 
 | SDL3 | Android AAR description: 3.4.16 / `fa2c02bb6e21974a89ea9824bc53c9932abe5f9c` | `SDL3-LICENSE.txt` |
 | LLVM C++ runtime | Notice from the Android NDK used for the linked static C++ runtime | `LLVM-RUNTIME-NOTICE.txt` |
 | xxHash | Original copyright and BSD-2-Clause terms from the included header | `xxHash-LICENSE.txt` |
-| ANGLE | Binary extracted from RG477M firmware; GLES library subsequently string-patched | `ANGLE-reference-LICENSE.txt` is a reference upstream license, not proof that all notices for the firmware binary are present |
+| ANGLE | Matched SGE Chromium 7151 prebuilts; ANGLE `df9c59dcacff7d186d00e3263a1aa68f8059137c` | `ANGLE-SGE7151-NOTICE.txt`, `ANGLE-SGE7151-THIRD-PARTY.txt`, `ANGLE-compat-provenance.json`; older firmware reference retained historically |
 
 These are component notices, not a blanket license for the application or game-derived material. Source provenance and the limits of this repository are recorded in [COMPONENTS-EN.md](../docs/COMPONENTS-EN.md). Presence of a component license in the source tree does not by itself establish that the component is linked into the APK.
 

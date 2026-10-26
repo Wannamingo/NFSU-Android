@@ -4,9 +4,26 @@
 
 # Controls, settings and saved progress
 
-Guide for **0.2.0-preview.7**, dated October 25, 2026. Vulkan texture memory accounting is corrected to address a renderer-budget exit during consecutive career races. Retained: the new touch controls with buttons or a neon stick and shared pause Ⅱ, the drag-racing layout fix, 4:3/16:9/20:9 with preserved HUD/menu proportions, fixed RG477M audio, Russian and English, settings, saved progress, and System Vulkan, MaliSX2, Purple Turnip T30 and custom ZIP driver selection.
+Guide for **0.2.0-preview.8**, dated October 26, 2026. Adds OpenSL ES · 512 selection for all devices and sensor-driven rotation to either landscape side. All preview.7 features are retained.
 
 The aspect-ratio screenshots show the Russian game interface. Select **Settings → Language → English** for the English app interface. This guide describes the current touch UI in text; older control screenshots are not presented as images of this release.
+
+## Audio selection and automatic rotation
+
+In the launcher, open **Settings → Audio output**:
+
+- **Auto** keeps the existing automatic output policy, including the current RG477M and Huawei HWMNA handling. Updating keeps this default unless you select another mode.
+- **OpenSL ES · 512** explicitly selects OpenSL ES with a requested 512-frame buffer. The option is available on every CPU/GPU model, including Snapdragon 730, without a processor gate. The negotiated buffer size depends on the audio device and SDL.
+
+The setting is saved and applies **on the next game launch**. Close the game, choose the output in the launcher and start the game again. Music/effect volume remains in NFSU's own options. This is separate from graphics-driver selection; System/MaliSX2/Turnip is retained.
+
+**The image rotates automatically with the device:** turn the phone to the other landscape side. The game, launcher, menus and touch controls follow the orientation sensor without a manual toggle. Portrait mode is not added. The selected 4:3/16:9/20:9 ratio is retained and the HUD is not stretched. Held touch buttons are released on rotation to avoid stuck throttle or steering. SDL no longer overrides the game's sensor orientation request.
+
+### New-mode test scope
+
+The test APK on RG477M confirmed OpenSL ES, 48 kHz stereo and 512 frames. Rendering, touch pause and opening settings were checked in both landscape directions using software display rotation; the game process stayed alive. The sensorLandscape request and enabled system orientation listener were confirmed. Physically flipping a phone, execution on Snapdragon 730 and a new long Bluetooth test have not been performed. The user's earlier short RG477M checks confirmed clean OpenSL ES audio through Bluetooth, wired headphones and speakers; those results retain their original scope.
+
+A matched ANGLE Chromium 7151 pair is also bundled for older ARM64 CPUs: the old library could fail with SIGILL on Snapdragon 685. This replaces an application library, not Android's system driver. The new pair was checked on RG477M; successful Redmi Note 13 4G / Snapdragon 685 startup and Snapdragon 730 execution remain unverified on those devices.
 
 ## Fix for the career memory-budget exit
 
@@ -175,7 +192,7 @@ Starting with **0.2.0-preview.3**, RG477M automatically uses **OpenSL ES**, **48
 
 Audible Bluetooth interference was reproduced with the previous AAudio path. In short title/menu tests using OpenSL ES, the user confirmed clean sound through **Bluetooth headphones, wired headphones and built-in speakers**. A separate check of the unified test build confirmed automatic output selection without diagnostic settings. The music, game audio data and mixer were unchanged.
 
-The fix applies to RG477M. The existing Huawei HWMNA output policy is retained; other devices keep their previous path. NFSU's volume and sound options remain available in its own menu.
+Auto retains the existing RG477M and Huawei HWMNA output policy; other devices keep their previous path. In preview.8, any user can explicitly select OpenSL ES · 512 in the launcher, as described above. NFSU's volume and sound options remain available in its own menu.
 
 Tests used an output connected before launch. Long races, audio latency and switching output during gameplay were not separately tested. This fix is not claimed to improve FPS or implement missing original Xbox audio effects.
 

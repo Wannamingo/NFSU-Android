@@ -1,0 +1,33 @@
+ANGLE compatibility candidate for NFSU, 25 October 2026
+
+Upstream project: ANGLE, https://github.com/google/angle
+Upstream revision: df9c59dcacff7d186d00e3263a1aa68f8059137c
+Compiled version: 2.1.25345 git hash df9c59dcacff
+Prebuilt packager: kubuszok/sge-angle-natives
+Release: https://github.com/kubuszok/sge-angle-natives/releases/tag/chromium-7151
+Archive: https://github.com/kubuszok/sge-angle-natives/releases/download/chromium-7151/angle-android-arm64.tar.gz
+Archive SHA256: e93aaece7b1048dcb1fab9102b5df001c8a5d83ee3dbc4fca1d0b6cf1c1d18f9
+
+Matched libraries, original bytes retained:
+libEGL_angle.so: 5f2a921ca6eea7ff074670bb511b28d364cf38591a38bd6dd0a914a3969e89c2
+libGLESv2_angle.so: dcb64eb358a5aeef7d4f8d07a3decb4bed1df0f23b54101ee0b8fccf67cc2e40
+The archive calls these files lib/libEGL.so and lib/libGLESv2.so. Only the
+filesystem names were adapted; ELF sonames already have the _angle suffix.
+There are no binary instruction patches, no new C++ shared-runtime files,
+no signing keys or game data in this handoff.
+
+This pair is a prebuilt upstream-based package, not a local source rebuild.
+Its Android ELF note declares API29, NDKr28/build13004108. Use Android10/API29
+or later. The app already has minSdk29; the requirement is not raised.
+Both ELF files have 16KiB LOAD alignment. RCpc LDAPR instructions are absent.
+Optional LSE and CRC/PMULL paths use capability checks and baseline fallbacks;
+their presence is documented, not hidden by changing the code.
+RG477M component and full-app smoke tests passed with MaliSX2. The older
+component run labelled System used an app-local Vulkan proxy; it is not
+independent proof of the native system driver. Redmi/Snapdragon 685 and 730
+execution, physical phone flipping and a full driver matrix were not tested.
+
+The notices below come from source revisions pinned by the ANGLE DEPS plus
+ANGLE's own license. They are a conservative component notice collection;
+the prebuilt packager did not provide a complete compiled-source SBOM. Existing
+NFSU, SDL, driver and other app notices must be retained by the APK packager.

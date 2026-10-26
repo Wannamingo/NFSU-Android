@@ -8,7 +8,7 @@ A preview of a native Android ARM64 port of Need for Speed Underground, based on
 
 **[Complete guide: controls, settings, backups and transferring progress](docs/GUIDE-EN.md)**
 
-**[v0.2.0-preview.7 downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.7)** — ARM64 APK, downloadable guides and checksums. [English release history](docs/RELEASE-NOTES-EN.md).
+**[v0.2.0-preview.8 downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.8)** — ARM64 APK, downloadable guides and checksums. [English release history](docs/RELEASE-NOTES-EN.md).
 
 ## Features
 
@@ -18,23 +18,18 @@ A preview of a native Android ARM64 port of Need for Speed Underground, based on
 - Gamepad support, separate touch/gamepad assignments, and A/B and X/Y swapping.
 - 4:3, 16:9 and 20:9 with preserved HUD and menu proportions; 1×/2×/3× internal resolution and a 60 or 120 FPS limit.
 - Russian and English interfaces.
+- Auto / OpenSL ES · 512 audio selection for all CPUs; sensor-driven rotation to either landscape side.
 - Fixed RG477M audio output: OpenSL ES with a 512-frame buffer is selected automatically, including on GammaOS.
 - Automatic profile backups in `Download/NFSU/Saves`, retention of the latest 10 generations created by the installation, and restoration through the system folder picker.
 - Faster exact conversion of swizzled textures and reuse of the Vulkan pipeline cache on the system-driver path. Texture-change checks are retained.
 
 ## Release status
 
-The current public version is **0.2.0-preview.7**, versionCode **10**. Cache and prewarm accounting now use real Vulkan texture allocation requirements. Counting RGBA bytes could previously allow a memory-budget exit while loading the next career track.
+The current public version is **0.2.0-preview.8**, versionCode **11**. Adds OpenSL ES · 512 selection on all CPUs and sensor rotation to either landscape side. A matched ANGLE pair replaces a library that used unsupported instructions on some older ARM64 CPUs.
 
-On October 25, 2026, the user manually completed the entire original problem tournament **«Субботний драйв» — all four stages** — on **RG477M / MaliSX2**, at 2×, 4:3 and a 60 FPS cap. The submitted save was copied exactly; the game process stayed alive across the stages and no autopilot was used. No crashes or memory-budget refusals were recorded during the series. The user confirmed tournament completion and that the new save loads; new progress was kept and the existing profile was not overwritten.
+RG477M checks covered audio selection, actual 48 kHz stereo / 512 frames and both rendered landscape orientations using software rotation. Physical phone flipping and execution on Snapdragon 685/730 remain untested. Native game code and the preview.7 memory fix are retained; no new FPS comparison or repeated full tournament is claimed.
 
-The highest recorded renderer allocation total in periodic samples was **314.20 MiB against a 512 MiB budget**. This is the maximum among logged samples, not a continuously measured peak or the app's total RAM. The cache stayed within 128 MiB, with 1,707 evictions and 69 restorations recorded. These counters confirm that the memory policy ran; they do not measure an FPS gain.
-
-This is one complete manual run of the specified series on RG477M/MaliSX2. No new FPS comparison or complete device/driver matrix is claimed.
-
-Retained: the new touch controls with buttons or a neon stick and shared pause Ⅱ, the drag-racing layout fix, 4:3/16:9/20:9 with preserved HUD/menu proportions, fixed RG477M audio, Russian and English, settings, saved progress, and System Vulkan, MaliSX2, Purple Turnip T30 and custom ZIP driver selection.
-
-Memory budgets and texture quality are retained. This is a preview release; the guide explains the fix and its test scope. Update without uninstalling and keep an external progress backup first.
+Update over the existing app without uninstalling or clearing data. Progress, language and settings are retained; keep an external profile backup first.
 
 ## Game data
 
