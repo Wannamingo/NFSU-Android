@@ -2,8 +2,25 @@
 
 # Release notes
 
-English translations of all eight public releases. Each section describes that release at publication; later features must not be assumed to exist in earlier APKs. Russian originals remain on the release pages.
+English translations of all nine public releases. Each section describes that release at publication; later features must not be assumed to exist in earlier APKs. Russian originals remain on the release pages.
 
+
+## v0.2.0-preview.9
+
+[Release and downloads](https://github.com/Wannamingo/NFSU-Android/releases/tag/v0.2.0-preview.9)
+
+### NFSU Android v0.2.0-preview.9
+
+October 31, 2026. Android ARM64, Android 10+, versionCode 12.
+
+- Individual touch-control size (40–160%) and opacity (20–100%), including buttons, D-pad, stick and pause. Retains overall racing scale, old positions, save/cancel and a selected-control reset.
+- Car reflections setting: every frame / every 2 / every 3 / Off. Disables the dynamic environment map and clears the old image, supports re-enabling and persistence, and is available in the launcher and in-game settings. Road reflections remain enabled.
+- Preserves the legacy Unified ed44 selection for RG477M / API 34 compatibility. The driver library is unchanged; this is not a new FPS patch or a universal mode for all Mali devices.
+- Retains the drag-layout fix, proportional 20:9 HUD, Russian/English, OpenSL ES 512 on all CPUs, both landscape orientations, driver selection, save backups and the preview.7 career memory fix.
+
+The qualified RG477M build passed 54 graphics groups. An actual paused Olympic Square scene confirmed zero EnvMap draws with Off and resumed drawing after re-enabling. Individual button settings were saved in the installed app. Settings, language and progress were preserved; the game was closed after testing. No moving-race FPS gain or new prolonged career run is claimed.
+
+DEX and every native library in the public APK match the tested build. Only version metadata and its HTML label changed; the public wrapper was not separately launched. Install over the existing app without uninstalling or clearing data. First launch requires your own original Xbox USA game files; they are not included.
 
 ## v0.2.0-preview.8
 

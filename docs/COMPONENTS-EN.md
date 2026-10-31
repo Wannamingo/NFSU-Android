@@ -8,15 +8,15 @@ This repository contains application releases and user documentation. It is not 
 
 | Field | Value |
 | --- | --- |
-| Version | 0.2.0-preview.8, versionCode 11, debuggable disabled |
+| Version | 0.2.0-preview.9, versionCode 12, debuggable disabled |
 | Architecture | Android ARM64; app requires Android 10+, T30 requires Android 11+ |
-| APK SHA-256 | `78a12804bdab37583d9a43a64e3d3be2ea150fcca20352413ffc94bb9f8ee831` |
-| Checked test APK | `a4f2e91ddd882aeb154a9fc84a280f979d7af2a2bc2e9ce1cfeafcbe75aae595` |
+| APK SHA-256 | `e9a2fe8479e546301387950260c52d9336b778880d89c772f655a4465c18600d` |
+| Checked test APK | `26fa84c9f50144b7c0f413046bab56dfc525f457e96be800c0f10152db75489f` |
 | Fixed custom-driver loader | `27e55484ad419a5e20985bcc7da00793fa0dc1eff3d2cfa3ef45746920aacc48` |
 | Original T30 ZIP SHA-256 | `f65b2d3353fd4aa7190bb5426b94468e99ffea7a58a830bc0c4651db89353227` |
 | vulkan.purple.so SHA-256 | `1d80dfa019659b008e4669311db5b1e4a02af59ff1d5458a98e2f5fe18ed013b` |
 
-For preview.8, libmain.so is byte-identical to preview.7. Java/DEX and launcher settings add audio selection and sensor orientation; the matched ANGLE pair and its notices are updated. The tested debug candidate has identical DEX and native libraries to this release. The final wrapper differs only in Manifest metadata, the HTML version label and corrected provenance notices; it was not separately cold-started. The test hash above is the audio/rotation candidate, not a fresh tournament run.
+Preview.9 adds individual controls, car reflections Off and legacy ed44 compatibility. DEX and every native library match the RG477M-tested candidate above; only Manifest version metadata and the HTML label differ. The wrapper was not separately cold-started. Native game SHA-256: `a1c64274e6b5483e4911d1c5b66d928869010c34ca5460174e8451f06917628c`. The current check covers 54 graphics groups and a paused real-track Off/re-enable test; historical tournament acceptance retains its October 25 scope.
 
 On October 25, 2026, the user manually completed the entire original problem tournament **«Субботний драйв» — all four stages** — on **RG477M / MaliSX2**, at 2×, 4:3 and a 60 FPS cap. The submitted save was copied exactly; the game process stayed alive across the stages and no autopilot was used. No crashes or memory-budget refusals were recorded during the series. The user confirmed tournament completion and that the new save loads; new progress was kept and the existing profile was not overwritten.
 
@@ -52,3 +52,13 @@ Users must import their own compatible Xbox USA game data. ISO, XBE and user sav
 
 
 Historical career checks above belong to preview.7. Preview.8 adds `NFSU-Android-preview.8-UI-source.zip` with current Java/UI, Manifest and tests. It is integration material, not a complete reproducible APK project.
+
+
+Preview.9 integration sources: `NFSU-Android-preview.9-integration-source.zip`. Contains the current Java/UI, native feature sources/patch and portable checks, not a complete reproducible APK tree. The original legacy ed44 driver binary is unchanged; its recorded upstream provenance and component notices remain in the app. No user saves, private device logs or signing key are included.
+
+
+
+
+
+
+[Legacy ed44 provenance and component scope](../licenses/Unified-ed44-NOTICE.txt). This release publishes application integration sources.

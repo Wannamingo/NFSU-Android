@@ -4,8 +4,16 @@
 </style></head><body><main><p><img src="images/title.png" alt="Need for Speed Underground"></p>
 <p><strong>English</strong> · <a href="GUIDE-RU.md">Русский</a> · <a href="../README.en.md">Project overview</a> · <a href="RELEASE-NOTES-EN.md">Release notes</a></p>
 <h1>Controls, settings and saved progress</h1>
-<p>Guide for <strong>0.2.0-preview.8</strong>, dated October 26, 2026. Adds OpenSL ES · 512 selection for all devices and sensor-driven rotation to either landscape side. All preview.7 features are retained.</p>
+<p>Guide for <strong>0.2.0-preview.9</strong>, October 31, 2026: individual control size and opacity, and car reflections Off. All preview.8 features are retained.</p>
 <p>The aspect-ratio screenshots show the Russian game interface. Select <strong>Settings → Language → English</strong> for the English app interface. This guide describes the current touch UI in text; older control screenshots are not presented as images of this release.</p>
+<h2>Turning off car reflections</h2>
+<p>In <strong>Launcher → Settings → Car reflections</strong>, choose <strong>every frame</strong>, <strong>every 2 frames</strong>, <strong>every 3 frames</strong>, or <strong>Off</strong>.</p>
+<p>During gameplay, open <strong>Ⅱ → Settings → Car reflections</strong>, choose a mode and tap <strong>Resume game</strong>. The choice persists across launches. Updating keeps the previous cadence; reflections are not automatically disabled.</p>
+<p><strong>Off</strong> stops the six environment views used for car reflections and clears their previous image. A frozen image is not left on the bodywork. Re-enabling the feature resumes updates. <strong>Road reflections, lighting and shadows remain enabled</strong>. Artwork baked into the original textures is not edited. Texture-change checks remain active.</p>
+<p><img src="images/reflections-off.png" alt="Car reflections set to Off in the Russian launcher"></p>
+<p>RG477M passed 54 graphics groups, including pixels in all six cleared faces and subsequent updates. On Olympic Square at the ordinary game pause, all EnvMap updates were skipped in 51 diagnostic frames, with zero draws for these views; re-enabling restored drawing in 43 checked frames. This validates the control, <strong>not a new moving-race FPS result</strong>. No new prolonged career run was performed for this release.</p>
+<h3>Compatibility with an existing Unified selection</h3>
+<p><strong>Unified ed44 · RG477M (legacy)</strong> preserves an old configuration with selection code 2. It uses the original unchanged ed44 library rather than a new experimental driver. The package targets <strong>RG477M / Mali-G615 MC6, Android API 34</strong>. It is a compatibility option for existing installations, without a claimed speedup or validation on other Mali devices. System, MaliSX2, Purple Turnip and custom ZIP import remain available. Check device compatibility when selecting or importing a driver.</p>
 <h2>Audio selection and automatic rotation</h2>
 <p>In the launcher, open <strong>Settings → Audio output</strong>:</p>
 <ul>
@@ -102,14 +110,18 @@
 <p>The stick provides horizontal analog steering: move it left or right to control the amount of steering. Vertical movement does not replace the accelerator or brake; use their separate buttons. Releasing the stick returns steering to neutral. Its size and position can be adjusted in the race-layout editor.</p>
 <h3>One shared pause button</h3>
 <p><strong>Ⅱ</strong> uses the same saved position and size in the classic and race layouts. It stays visible and usable even with <strong>Touch controls → Hide</strong>, or when Auto hides the other controls because a gamepad is connected. Settings and exit therefore remain accessible on screen.</p>
-<h2>Button positions and size</h2>
+<h2>Button positions, individual size and opacity</h2>
 <p>Open <strong>Ⅱ → Touch control positions</strong>, or the same entry in the in-game settings. The editor pauses the game.</p>
 <ol>
-<li>Drag controls in the current layout. Configure the other layout separately; pause Ⅱ is shared.</li>
-<li>In the race layout, the <strong>Size</strong> slider adjusts controls from <strong>40% to 100%</strong>, including the race stick. It does not change resolution or car speed.</li>
-<li>Tap <strong>Save</strong>. Positions and size persist after restarting. Updating does not reset previously saved coordinates or size.</li>
+<li>Tap a control to select it. It is highlighted and its name appears in the panel. Buttons, the D-pad, the stick and shared pause are selectable. Tap the name row to cycle to controls hidden behind the panel.</li>
+<li>Drag the selected control to move it.</li>
+<li><strong>Size, 40–160%</strong>, changes that control and its hit area. Other controls are unchanged.</li>
+<li><strong>Opacity, 20–100%</strong>, changes the selected control&#39;s visibility. Lower values are more transparent; the hit area stays the same size.</li>
+<li>Tap <strong>Save</strong> to persist the changes across launches. <strong>Cancel</strong> restores the state before this editing session, including resets.</li>
 </ol>
-<p><strong>Reset</strong> restores default positions and, in the race layout, 100% size; tap Save to keep the reset. <strong>Cancel</strong> restores the state from before editing. On a gamepad, Start saves changes; Select or Android Back cancels them. After closing the editor, choose Resume game.</p>
+<p><strong>Reset control</strong> restores just the selected control. <strong>Reset</strong> resets the entire layout; Save commits the reset. Gamepad Start saves; Select or Android Back cancels.</p>
+<p>The existing overall racing scale, <strong>40–100%</strong>, is retained and multiplies the individual scale: overall 70% × individual 150% = effective 105%. Classic and race layouts have separate settings; shared pause Ⅱ uses one ID. Updating retains old positions and overall size; new individual values default to 100%.</p>
+<p><img src="images/individual-controls.png" alt="Editor with button B at 125% size and 35% opacity"></p>
 <h2>Gamepads and button assignments</h2>
 <p>Assignments have separate <strong>Touch controls</strong> and <strong>Gamepad</strong> tabs. The first lists available classic touch buttons; the shared pause button always opens the app menu and is not an assignable ≡ button.</p>
 <p>Physical gamepads retain the Xbox actions: D-pad, Start, Back, stick clicks, A/B/X/Y, Black, White, LT, RT, app menu or Unassigned. Removing extra touch controls does not remove a physical gamepad&#39;s shoulder buttons or sticks.</p>

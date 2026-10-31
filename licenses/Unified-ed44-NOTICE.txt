@@ -1,0 +1,26 @@
+Legacy Unified ed44 compatibility in NFSU Android preview.9
+
+Unchanged ICD SHA256:
+ed44f3a22cf28ec9a5a8deb19956481842e8b1acf4c4d2db24d71280dd38329e
+
+The original embedded legacy-ed44.zip is retained byte-for-byte, including
+its component notices and historical SOURCE/VALIDATION metadata. Historical
+base435/rc1 notes in that package do not describe a new ed44 rebuild.
+
+The original package records upstream source references and modification
+hashes in SOURCE.json. Its component notices remain in the app. This NFSU
+release publishes application integration changes; a separate driver-source
+archive is not part of this release. No new driver build is claimed.
+
+Upstream Mesa: bmdhacks/armsx2-turnip
+commit5a07217f034b3e50d8c7c7794f97a2df1742613b
+PanVK-kbase source reference: zenithblue-oss/panvk-kbase-android
+commitfd6ed91eff1c8d3a83307a2348b959bb93797011
+Original component licenses remain inside the legacy package/source bundle.
+This notice does not replace or combine those license scopes.
+
+Target: RG477M/Mali-G615 MC6, Android API34. Preserves old choice2 and its
+runtime import policy; not a new FPS improvement or universal Mali driver.
+Preview.9 candidate26fa84c9 passed54 GPU groups and a paused real-track
+Off/re-enable test. Neither a complete Vulkan CTS pass nor a new full career
+run is claimed. No later descriptor-reuse driver candidate is included.

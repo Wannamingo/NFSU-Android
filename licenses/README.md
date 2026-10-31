@@ -19,3 +19,7 @@ These files retain the original component terms and notices. They do not assign 
 These are component notices, not a blanket license for the application or game-derived material. Source provenance and the limits of this repository are recorded in [COMPONENTS-EN.md](../docs/COMPONENTS-EN.md). Presence of a component license in the source tree does not by itself establish that the component is linked into the APK.
 
 Purple Turnip T30: [provenance and hashes](Purple-Turnip-T30-NOTICE.txt). The original author archive is included without changing its contents.
+
+
+
+Legacy Unified ed44 is retained for existing RG477M/API34 configurations. See [Unified-ed44-NOTICE.txt](Unified-ed44-NOTICE.txt) for recorded provenance and component scope.

@@ -4,9 +4,25 @@
 
 # Controls, settings and saved progress
 
-Guide for **0.2.0-preview.8**, dated October 26, 2026. Adds OpenSL ES · 512 selection for all devices and sensor-driven rotation to either landscape side. All preview.7 features are retained.
+Guide for **0.2.0-preview.9**, October 31, 2026: individual control size and opacity, and car reflections Off. All preview.8 features are retained.
 
 The aspect-ratio screenshots show the Russian game interface. Select **Settings → Language → English** for the English app interface. This guide describes the current touch UI in text; older control screenshots are not presented as images of this release.
+
+## Turning off car reflections
+
+In **Launcher → Settings → Car reflections**, choose **every frame**, **every 2 frames**, **every 3 frames**, or **Off**.
+
+During gameplay, open **Ⅱ → Settings → Car reflections**, choose a mode and tap **Resume game**. The choice persists across launches. Updating keeps the previous cadence; reflections are not automatically disabled.
+
+**Off** stops the six environment views used for car reflections and clears their previous image. A frozen image is not left on the bodywork. Re-enabling the feature resumes updates. **Road reflections, lighting and shadows remain enabled**. Artwork baked into the original textures is not edited. Texture-change checks remain active.
+
+![Car reflections set to Off in the Russian launcher](images/reflections-off.png)
+
+RG477M passed 54 graphics groups, including pixels in all six cleared faces and subsequent updates. On Olympic Square at the ordinary game pause, all EnvMap updates were skipped in 51 diagnostic frames, with zero draws for these views; re-enabling restored drawing in 43 checked frames. This validates the control, **not a new moving-race FPS result**. No new prolonged career run was performed for this release.
+
+### Compatibility with an existing Unified selection
+
+**Unified ed44 · RG477M (legacy)** preserves an old configuration with selection code 2. It uses the original unchanged ed44 library rather than a new experimental driver. The package targets **RG477M / Mali-G615 MC6, Android API 34**. It is a compatibility option for existing installations, without a claimed speedup or validation on other Mali devices. System, MaliSX2, Purple Turnip and custom ZIP import remain available. Check device compatibility when selecting or importing a driver.
 
 ## Audio selection and automatic rotation
 
@@ -98,15 +114,21 @@ The stick provides horizontal analog steering: move it left or right to control 
 
 **Ⅱ** uses the same saved position and size in the classic and race layouts. It stays visible and usable even with **Touch controls → Hide**, or when Auto hides the other controls because a gamepad is connected. Settings and exit therefore remain accessible on screen.
 
-## Button positions and size
+## Button positions, individual size and opacity
 
 Open **Ⅱ → Touch control positions**, or the same entry in the in-game settings. The editor pauses the game.
 
-1. Drag controls in the current layout. Configure the other layout separately; pause Ⅱ is shared.
-2. In the race layout, the **Size** slider adjusts controls from **40% to 100%**, including the race stick. It does not change resolution or car speed.
-3. Tap **Save**. Positions and size persist after restarting. Updating does not reset previously saved coordinates or size.
+1. Tap a control to select it. It is highlighted and its name appears in the panel. Buttons, the D-pad, the stick and shared pause are selectable. Tap the name row to cycle to controls hidden behind the panel.
+2. Drag the selected control to move it.
+3. **Size, 40–160%**, changes that control and its hit area. Other controls are unchanged.
+4. **Opacity, 20–100%**, changes the selected control's visibility. Lower values are more transparent; the hit area stays the same size.
+5. Tap **Save** to persist the changes across launches. **Cancel** restores the state before this editing session, including resets.
 
-**Reset** restores default positions and, in the race layout, 100% size; tap Save to keep the reset. **Cancel** restores the state from before editing. On a gamepad, Start saves changes; Select or Android Back cancels them. After closing the editor, choose Resume game.
+**Reset control** restores just the selected control. **Reset** resets the entire layout; Save commits the reset. Gamepad Start saves; Select or Android Back cancels.
+
+The existing overall racing scale, **40–100%**, is retained and multiplies the individual scale: overall 70% × individual 150% = effective 105%. Classic and race layouts have separate settings; shared pause Ⅱ uses one ID. Updating retains old positions and overall size; new individual values default to 100%.
+
+![Editor with button B at 125% size and 35% opacity](images/individual-controls.png)
 
 ## Gamepads and button assignments
 
